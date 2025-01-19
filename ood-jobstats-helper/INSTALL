@@ -1,0 +1,19 @@
+复制文件夹到/var/www/ood/apps/sys 下
+
+scl -l | grep ruby
+scl enable rh-ruby30 bash
+ruby -v
+cd /var/www/ood/apps/sys/ood-jobstats-helper
+rm -rf vendor/bundle Gemfile.lock
+gem install bundler -v 2.2.22
+
+# mkdir -p .bundle
+# cat > .bundle/config << EOL
+# ---
+# BUNDLE_PATH: "vendor/bundle"
+# BUNDLE_DISABLE_SHARED_GEMS: "true"
+# BUNDLE_JOBS: 4
+# EOL
+
+scl enable rh-ruby30 -- bundle install
+chmod -R 755 ood-jobstats-helper
