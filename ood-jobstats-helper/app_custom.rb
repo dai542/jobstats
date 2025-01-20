@@ -32,7 +32,8 @@ APP_CONFIG = {
 
 helpers do
   def dashboard_title
-    "DJHPC-POLYU STUDIO"
+    # "DJHPC-POLYU STUDIO"
+    ENV['OOD_DASHBOARD_TITLE'] || "Open OnDemand"
   end
 
   def dashboard_url
