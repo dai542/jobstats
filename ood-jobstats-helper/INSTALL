@@ -1,5 +1,10 @@
 复制文件夹到/var/www/ood/apps/sys 下
 
+/etc/ood/config/nginx_stage.yml中
+pun_custom_env:
+  OOD_DASHBOARD_TITLE: "DJHPC-POLYU STUDIO"
+
+
 scl -l | grep ruby
 scl enable rh-ruby30 bash
 ruby -v
